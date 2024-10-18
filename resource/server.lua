@@ -185,7 +185,7 @@ lib.callback.register('stevo_portablemoneywash:startedWash', function(source, id
         hasKey = true 
     end
 
-    if not hasKey then 
+    if washer.data.locked and not hasKey then 
         return handleCheater(source)
     end
 
