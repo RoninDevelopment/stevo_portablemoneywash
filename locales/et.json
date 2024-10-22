@@ -1,0 +1,66 @@
+{
+    "notify" : {
+        "alreadyplacing" : "Te juba asetate pesumasinat",
+        "unabletoplace" : "Ilmnes viga, pesumasinat ei saa paigutada",
+        "washerplaced" : "Pesumasin on edukalt paigaldatud!",
+        "locked" : "%s on lukus!",
+        "keyalreadyexists" : "Sellel mängijal on juba võti!",
+        "gavekey" : "Andsid võtme %s",
+        "removedkey" : "Eemaldatud %s võti",
+        "cantremovekey" : "Võtit ei saanud eemaldada!",
+        "nodirtymoney" : "Sul pole musta raha!",
+        "washstarted" : "Pesemine alanud, pesemine lõppeb: %s",
+        "noplayersnearby" : "Läheduses pole ühtegi mängijat!",
+        "moneycollected" : "Võtsite pesumasinat $%s",
+        "washCancelled" : "Pesemine katkestatud!",
+        "pickedupWasher" : "Pesumasin edukalt ülesse võetud!"
+    },
+
+    "progress" : {
+        "loadingWasher" : "Täida pesumasinat rahaga",
+        "unloadingWasher" : "Võta pesumasinast raha",
+        "pickupWasher" : "Võta pesumasin ülesse"
+    },
+
+    "target" : {
+        "open" : "Tegutse %s"
+    },
+
+    "menu" : {
+        "title" : "%s's %s",
+        "locked" : "Luku olek:",
+        "managekeys" : "Halda Võtmeid",
+        "keys" : "Masina Võtmed",
+        "removekey" : "Eemalda Võti",
+        "nokeys" : "Puuduvad Võtmed",
+        "addkeys" : "Lisa Võti",
+        "wash" : "Staatus:",
+        "washactive" : "Aktiivne",
+        "washinactive" : "Deaktiivne",
+        "washamount" : "Mustaraha Summa:",
+        "amounttowash" : "Peseda Vaja: %s",
+        "washstart" : "Alustas:",
+        "washend" : "Lõpetab:",
+        "startwash" : "Alusta Pesemist",
+        "timetocomplete" : "Aeg: %s",
+        "washreturn" : "Puhas tagastus: $%s",
+        "currentWash" : "Pese Raha",
+        "notWashing" : "Seib ei ole aktiivne",
+        "cancelwash" : "Katkesta Pesemine",
+        "washStartedBy" : "Alustas:",
+        "unloadmoney" : "Laadige puhas raha maha",
+        "washcomplete" : "$%s Valmis",
+        "pickupWasher" : "Võta pesumasin ülesse"
+    },
+
+    "input" : {
+        "addkey" : "Anna võti mängijale",
+        "addkeyselect" : "Vali mängija",
+        "washamount" : "Amount to wash",
+        "washamountinfo" : "Mustaraha: $%s"
+    },
+
+    "locked" : "Lukustatud",
+    "unlocked" : "Lukustamata",
+    "placeInstructions": "[E] Pane maha  \n[Scroll Up/Down] Liiguta"
+}
