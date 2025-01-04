@@ -27,4 +27,5 @@ files {
 
 dependencies {
     'ox_lib'
+    'oxmysql'
 }

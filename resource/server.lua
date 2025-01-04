@@ -454,5 +454,26 @@ AddEventHandler('onResourceStop', function(resource)
     end
 end)
 
+RegisterServerEvent('stevo_portablemoneywash:attemptRobbery')
+AddEventHandler('stevo_portablemoneywash:attemptRobbery', function(washerId)
+    local player = source
+    local success = math.random() > 0.5  -- 50% chance to succeed; adjust as needed
+    local amountStolen = success and math.random(1000, 5000) or 0  -- Random amount to steal
+
+    if success then
+        -- Subtract the stolen amount from the washer's balance (if applicable)
+        local washerData = getWasherData(washerId)
+        washerData.balance = washerData.balance - amountStolen
+        setWasherData(washerId, washerData)
+
+        -- Notify the player of the successful robbery
+        TriggerClientEvent('stevo_lib:notify', player, locale('notify.robberySuccess', amountStolen))
+    else
+        -- Notify the player of failure
+        TriggerClientEvent('stevo_lib:notify', player, locale('notify.robberyFailed'))
+    end
+end)
+
+
 
  

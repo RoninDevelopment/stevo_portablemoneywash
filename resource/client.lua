@@ -523,4 +523,46 @@ AddEventHandler('onResourceStart', function(resource)
     initWashers()
 end)
 
+local function manageWasher(id)
+    local washer, isOwner, hasKey, time = lib.callback.await('stevo_portablemoneywash:getWasherData', false, id)
+
+    if washer.data.locked and not isOwner and not hasKey then 
+        return stevo_lib.Notify(locale("notify.locked", locale("menu.title", washer.name, config.washingMachines[washer.type].label)), 'error', 3000)
+    end
+
+    local options = {
+        {
+            title = locale("menu.rob"),
+            icon = 'hand-holding-usd',  -- You can change the icon to a robber icon
+            arrow = true,
+            onSelect = function()
+                if progress({
+                    duration = 5000,  -- Robbery duration
+                    position = 'bottom',
+                    label = locale('progress.robbingWasher'),
+                    useWhileDead = false,
+                    canCancel = true,
+                    anim = {
+                        dict = "anim@amb@clubhouse@tutorial@bkr_tut_ig3@",
+                        clip = "machinic_loop_mechandplayer"
+                    },
+                    disable = { move = true, car = true, mouse = false, combat = true },
+                }) then
+                    -- Handle the robbery logic
+                    local robResult = lib.callback.await('stevo_portablemoneywash:attemptRobbery', false, id)
+
+                    if robResult.success then
+                        stevo_lib.Notify(locale('notify.robberySuccess', robResult.amount), 'success', 5000)
+                    else
+                        stevo_lib.Notify(locale('notify.robberyFailed'), 'error', 5000)
+                    end
+                end
+            end
+        }
+    }
+    
+    -- Add the rest of the original options here...
+end
+
+
 
